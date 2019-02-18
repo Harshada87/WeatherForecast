@@ -3,6 +3,9 @@ package harshadavolvocode.com.volvo_weatherforecast_harshada.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import harshadavolvocode.com.volvo_weatherforecast_harshada.R;
+
 /*
  * Created by Harshada Mahulkar
  * */

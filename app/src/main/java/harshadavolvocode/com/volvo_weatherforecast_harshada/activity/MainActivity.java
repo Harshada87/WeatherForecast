@@ -22,6 +22,7 @@ import java.util.List;
 
 import harshadavolvocode.com.volvo_weatherforecast_harshada.Model.Location;
 import harshadavolvocode.com.volvo_weatherforecast_harshada.R;
+
 /*
  * Created by Harshada Mahulkar
  * */
@@ -31,17 +32,17 @@ import harshadavolvocode.com.volvo_weatherforecast_harshada.R;
 //o	London
 //o	New York
 //o	Berlin
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
-    CardView cv1, cv2, cv3, cv4, cv5,cv6;
-    TextView tv_gothen, tv_stockholm, tv_maountainview, tv_london, tv_newyork, tv_berlin ;
-    String entryPoint = "https://www.metaweather.com";
-    String urlLocation = "/api/location/search/?query=";
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private CardView cv1, cv2, cv3, cv4, cv5, cv6;
+    private TextView tv_gothen, tv_stockholm, tv_maountainview, tv_london, tv_newyork, tv_berlin;
+    private String entryPoint = "https://www.metaweather.com";
+    private String urlLocation = "/api/location/search/?query=";
     private Gson gson;
     Location location;
     private View Scroll;
 
     @Override
-    protected void onCreate( Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         cv1 = findViewById(R.id.card1);
@@ -79,8 +80,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId())
-        {
+        switch (v.getId()) {
             case R.id.card1:
                 requestLocation(tv_gothen.getText().toString());
                 break;
@@ -105,22 +105,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void requestLocation(String s) {
-        StringRequest request = new StringRequest(entryPoint+urlLocation+s,
+        StringRequest request = new StringRequest(entryPoint + urlLocation + s,
 
                 new Response.Listener<String>() {
 
                     @Override
                     public void onResponse(String response) {
 
-                       List<Location> locations =  Arrays.asList(gson.fromJson(response, Location[].class));
-                        for(Location location: locations )
-                        {
+                        List<Location> locations = Arrays.asList(gson.fromJson(response, Location[].class));
+                        for (Location location : locations) {
                             String woeid = String.valueOf(location.getWoeid().intValue());
                             String title = location.getTitle().toString().trim();
-                            Log.i("Locatioin", location.getWoeid().intValue()+ ":" +location.getTitle());
+                            Log.i("Locatioin", location.getWoeid().intValue() + ":" + location.getTitle());
                             openFragmant(woeid, title);
                         }
-                        }
+                    }
 
                 },
 
@@ -137,10 +136,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void openFragmant(String s, String t) {
-       Intent i = new Intent(this, DetailActivity.class);
-       i.putExtra("woeid",s);
-       i.putExtra("LocationTitle", t);
-       startActivity(i);
+        Intent i = new Intent(this, DetailActivity.class);
+        i.putExtra("woeid", s);
+        i.putExtra("LocationTitle", t);
+        startActivity(i);
 
     }
 
@@ -153,5 +152,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // TODO Auto-generated method stub
         super.onResume();
     }
-    }
+}
 

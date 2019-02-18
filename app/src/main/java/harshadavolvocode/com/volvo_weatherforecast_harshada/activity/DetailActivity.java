@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Toast;
+
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -14,30 +15,32 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import harshadavolvocode.com.volvo_weatherforecast_harshada.Model.ConsolidatedWeather;
 import harshadavolvocode.com.volvo_weatherforecast_harshada.Model.Weather;
 import harshadavolvocode.com.volvo_weatherforecast_harshada.R;
 import harshadavolvocode.com.volvo_weatherforecast_harshada.adapter.WeatherAdapter;
+
 /*
-* Created by Harshada Mahulkar
-* */
+ * Created by Harshada Mahulkar
+ * */
 public class DetailActivity extends AppCompatActivity {
     List<ConsolidatedWeather> consolidatedWeatherList = new ArrayList<>();
     RecyclerView recyclerView;
-    String entryPoint = "https://www.metaweather.com";
+    private String entryPoint = "https://www.metaweather.com";
 
     private String urlDetail = "/api/location/";
     Intent intent;
-    String woeid;
+    private String woeid;
     private Gson gson;
-    String name;
-    RecyclerView.Adapter recyclerViewAdapter;
-    WeatherAdapter adapter;
+    private WeatherAdapter adapter;
     ArrayList<String> list = new ArrayList<>();
     List<Weather> weatherList;
 
@@ -46,7 +49,6 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         init();
-
     }
 
     public void init() {
@@ -64,7 +66,6 @@ public class DetailActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(DetailActivity.this));
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
-
 
     }
 

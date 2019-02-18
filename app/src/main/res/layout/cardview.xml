@@ -16,30 +16,29 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="129dp"
-        android:background="#ECEFF1">
+        android:background="#0000">
 
         <com.android.volley.toolbox.NetworkImageView
             android:id="@+id/VolleyImageView"
             android:layout_width="150dp"
             android:layout_height="100dp"
-            android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:src="@mipmap/ic_launcher_round"
             android:visibility="gone" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="112dp"
-            android:layout_height="88dp"
-            android:layout_alignParentBottom="true"
+            android:layout_width="92dp"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_alignParentBottom="true"
             android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:background="@color/common_google_signin_btn_text_dark_focused"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="16dp"
             android:padding="5dp"
             card_view:srcCompat="@mipmap/ic_launcher_round" />
 
@@ -47,10 +46,10 @@
             android:id="@+id/ImageNameTextView"
             android:layout_width="192dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentTop="true"
-            android:layout_marginEnd="34dp"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="23dp"
+            android:layout_marginEnd="34dp"
             android:gravity="center"
             android:text="JSon Image Name"
             android:textColor="#000000"
@@ -69,8 +68,8 @@
             android:id="@+id/textViewtemp"
             android:layout_width="221dp"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/ImageNameTextView"
             android:layout_below="@+id/textViewdate"
+            android:layout_alignStart="@+id/ImageNameTextView"
             android:layout_marginTop="0dp"
             android:text="TextView" />
 
@@ -78,8 +77,8 @@
             android:id="@+id/textViewwinddirection"
             android:layout_width="224dp"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/ImageNameTextView"
             android:layout_below="@+id/textViewtemp"
+            android:layout_alignStart="@+id/ImageNameTextView"
             android:text="TextView" />
 
     </RelativeLayout>

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Volvo-Weather Forecast-Harshada</string>
+    <string name="app_name">Weather Forecast</string>
     <string name="title_activity_maps">Map</string>
     <string name="gothenburg">Gothenburg</string>
     <string name="Stockholm">Stockholm</string>
@@ -7,8 +7,4 @@
     <string name="London">London</string>
     <string name="New_York">New York</string>
     <string name="Berlin">Berlin</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
 </resources>
